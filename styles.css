@@ -36,3 +36,10 @@ kbd {
     background: rgba(0,0,0,0.4);
     text-shadow: 0 0 .5rem black;
   }
+
+.sound {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color:blue;
+}
