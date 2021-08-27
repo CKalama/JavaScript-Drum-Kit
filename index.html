@@ -78,8 +78,20 @@
         audio.currentTime = 0; //rewinds to the start;
         //We can use JS to play the Element. Note how without above code, the sound has to finish before you can hit it again
         audio.play();
-        console.log(key);
+        //console.log(key);
+        key.classList.add('playing');
     });
+
+    //Creating function to remove the transition
+    function removeTransition(e) {
+        if(e.propertyName !== 'transform') return; //Skip it if its not a transform
+        console.log(e.propertyName);
+
+        this.classList.remove('playing');
+    }
+
+    const keys = Array.from(document.querySelectorAll('.key'));
+    keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 
 </script>
 
